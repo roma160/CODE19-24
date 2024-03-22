@@ -2,7 +2,7 @@
 import psycopg2
 import click
 
-with open("pspass.txt", "r") as f:
+with open("./sqlscripts/pspass.txt", "r") as f:
     password = f.read()
 
 conn = psycopg2.connect(
@@ -26,6 +26,7 @@ print(cur.execute('''CREATE TABLE public.users (
 	"name" varchar NULL,
 	"password" varchar NOT NULL,
 	email varchar NOT NULL,
+    phone_number varchar NULL,
 	height float4 NULL,
 	weight float4 NULL,
     age int4 NULL,
